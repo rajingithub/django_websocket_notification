@@ -2,8 +2,10 @@
 
 from channels.generic.websocket import WebsocketConsumer
 from asgiref.sync import async_to_sync
-from utils.Helpers import logger
+import logging
 from channels.layers import get_channel_layer
+
+logger = logging.getLogger("websocket_notification")
 
 class UIWebsocketConsumer(WebsocketConsumer):
     def connect(self):
